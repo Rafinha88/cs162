@@ -1,0 +1,46 @@
+//what is the value of argv?
+print argv 	= $1 = (char **) 0x7fffffffe5f8
+
+//what is pointed to by argv?
+print argv[0] = $2 = 0x7fffffffe82b "home/vagrant/code/personal/hw0/wc"
+
+//what is the address of the function main?
+print/x &main = $3 = 0x40068d
+
+//info stack. explain what you see.
+#0  main (argc=2, argv=0x7fffffffe5f8) at wc.c:16
+
+//info frame. explain what you see.
+Stack level 0, frame at 0x7fffffffe520:
+ rip = 0x4006a2 in main (wc.c:16); saved rip = 0x7ffff7a36ec5
+ source language c.
+ Arglist at 0x7fffffffe510, args: argc=2, argv=0x7fffffffe5f8
+ Locals at 0x7fffffffe510, Previous frame's sp is 0x7fffffffe520
+ Saved registers:
+  rbp at 0x7fffffffe510, rip at 0x7fffffffe518
+
+//info registers. which registers are holding aspects of the program that you recognize?
+rax            0x40068d	4195981
+rbx            0x0	0
+rcx            0x0	0
+rdx            0x7fffffffe610	140737488348688
+rsi            0x7fffffffe5f8	140737488348664
+rdi            0x2	2
+rbp            0x7fffffffe510	0x7fffffffe510
+rsp            0x7fffffffe4f0	0x7fffffffe4f0
+r8             0x7ffff7dd4e80	140737351863936
+r9             0x7ffff7dea560	140737351951712
+r10            0x7fffffffe3a0	140737488348064
+r11            0x7ffff7a36dd0	140737348070864
+r12            0x4005a0	4195744
+r13            0x7fffffffe5f0	140737488348656
+r14            0x0	0
+r15            0x0	0
+rip            0x4006a2	0x4006a2 <main+21>
+eflags         0x246	[ PF ZF IF ]
+cs             0x33	51
+ss             0x2b	43
+ds             0x0	0
+es             0x0	0
+fs             0x0	0
+gs             0x0	0

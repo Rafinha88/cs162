@@ -1,0 +1,20 @@
+//what file format is used for this binary?
+//and what architecture is it compiled for?
+wc: file format elf64-x86-64
+architeture: i386:x86-64
+
+//what are some if the names of segments you find?
+.init
+.text
+.dynamic
+.data
+.bss
+
+//what segment contains main (the function) and what is the address of main?
+Disassembly of section .text
+address of main = 0x40068d
+
+//do you see the stack segment anywhere? what about the heap? explain.
+There is no Stack and Heap segment because these sections are allocated at run-time,
+another content that is created at runtime is the shared C libraries dynamically
+linked from shared objects libraries (.so files).

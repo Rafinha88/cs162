@@ -1,0 +1,39 @@
+//using objdump with -D flag on the map executable.
+//which address from the output of running ./map are defined in the executable
+//and what are they used for.
+0x4005c2 Disassembly of section .text:
+0x40057d Disassembly of section .text:
+0x601048 Disassembly of section .text:
+
+//make a list of the important segments, and what they are used for
+
+.text or Code
+a read-only memory area that holds the machine instructions or program code.
+
+.data
+a read-only or read-write memory area that holds the global/static data
+manipulated by the user program.
+
+.bss
+also know as uninitialized data, contains all global variables
+and static variables that are initialized to zero os do not have
+explict initialization in souce code.
+
+Heap a read-write memory area that holds all the data dynamically
+allocated at runtime via malloc() and released via free() (or C++ new and delete).
+
+Stack
+a read-write memory area that cotains stack frame needed to hold process
+context information and all automatic variables (function parameters and local variables).
+
+//what direction is the stack growing in?
+growing downwards
+
+//how large is the stack frame for each recursive call?
+0x30 or 48 bytes
+
+//where is the heap? what direction is it growing in?
+0x1ad6010 growing upwards
+
+//are the two malloc()ed memory areas contiguous?
+no, there are 12 bytes between them.
